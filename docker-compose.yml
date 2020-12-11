@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  deny-piet:
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: dp-mysql
+    tmpfs: /var/lib/mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: root
+    networks:
+      - deny-piet
+
+  php:
+    image: thomasowow/laravel-php:7.4
+    container_name: dp-php
+    tty: true
+    volumes:
+      - .:/var/www/html:cached
+    networks:
+      - deny-piet

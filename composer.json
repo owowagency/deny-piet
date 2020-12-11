@@ -1,0 +1,41 @@
+{
+    "name": "owowagency/deny-piet",
+    "description": "A package which denies access to Pieter-Jan.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Dees Oomens",
+            "email": "dees@owow.io"
+        }
+    ],
+    "keywords": [
+        "Laravel",
+        "Joking"
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "laravel/framework": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "OwowAgency\\DenyPiet\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OwowAgency\\DenyPiet\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OwowAgency\\DenyPiet\\ServiceProvider"
+            ]
+        }
+    }
+}
